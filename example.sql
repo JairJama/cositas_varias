@@ -181,3 +181,14 @@ INSERT INTO sym_trigger_router (
 ) VALUES
 ('devoluciones_trigger', 'sucursal1-sucursal2', 1, 1, current_timestamp, current_timestamp),
 ('devoluciones_trigger', 'sucursal2-sucursal1', 1, 1, current_timestamp, current_timestamp);
+
+
+SELECT m.nombre AS clientes, t.estado AS devoluciones
+FROM clientes m
+JOIN LATERAL (
+	SELECT *
+	  FROM dblink(
+	    'host=pg-sucursal1 port=5432 dbname=tiendapeliculas user=postgres password=postgres',
+	    'SELECT * FROM devoluciones'
+	  ) AS t(id UUID, fechaDevolucion timestamp, alquiler_id uuid ,estado VARCHAR)
+) t ON true;
