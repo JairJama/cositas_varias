@@ -1,0 +1,97 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Sistema de Tienda de Alquiler de Películas",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/peliculas": {
+      "get": {
+        "summary": "Listar películas",
+        "responses": {
+          "200": {
+            "description": "Lista de películas"
+          }
+        }
+      }
+    },
+    "/clientes": {
+      "get": {
+        "summary": "Listar clientes",
+        "responses": {
+          "200": {
+            "description": "Lista de clientes"
+          }
+        }
+      }
+    },
+    "/generos": {
+      "get": {
+        "summary": "Listar géneros",
+        "responses": {
+          "200": {
+            "description": "Lista de géneros"
+          }
+        }
+      }
+    },
+    "/alquileres": {
+      "get": {
+        "summary": "Listar alquileres",
+        "responses": {
+          "200": {
+            "description": "Lista de alquileres"
+          }
+        }
+      }
+    },
+    "/empleados": {
+      "get": {
+        "summary": "Listar empleados",
+        "responses": {
+          "200": {
+            "description": "Lista de empleados"
+          }
+        }
+      }
+    },
+    "/inventario": {
+      "get": {
+        "summary": "Listar inventario",
+        "responses": {
+          "200": {
+            "description": "Lista de inventario"
+          }
+        }
+      }
+    },
+    "/devoluciones": {
+      "get": {
+        "summary": "Listar devoluciones",
+        "responses": {
+          "200": {
+            "description": "Lista de devoluciones"
+          }
+        }
+      }
+    },
+    "/peliculas/{id}/inventario": {
+      "get": {
+        "summary": "Consultar inventario de una película",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Inventario de una película"
+          }
+        }
+      }
+    }
+  }
+} 
