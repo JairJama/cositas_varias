@@ -1,6 +1,6 @@
----Aqui va a ir las configuraciones del symmetricDS
 
-select * from sym_node_group_link; --cambiar de 0 a 1 en la columna de isreversible
+
+select * from sym_node_group_link; 
 
 --enrutar la tabla mascota de forma bidireccional
 INSERT INTO sym_router (
